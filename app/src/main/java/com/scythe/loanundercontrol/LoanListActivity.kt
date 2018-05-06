@@ -35,7 +35,12 @@ class LoanListActivity : AppCompatActivity() {
         return arrayOf(
                 Loan("First loan", 15000.45.bd,
                         LocalDate.of(2018, 5, 1),
-                        emptyArray(), Currency.getInstance("EUR")),
+                        arrayOf(
+                                Payment(LocalDate.of(2015, 12, 1),
+                                        200.13.bd),
+                                Payment(LocalDate.of(2015, 12, 1),
+                                        415.bd)
+                        ), Currency.getInstance("EUR")),
                 Loan("Second loan", 18000.bd,
                         LocalDate.of(2017, 4, 12),
                         emptyArray(), Currency.getInstance("USD")),

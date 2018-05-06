@@ -1,88 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        style="@style/CardView.Light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true">
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraint_layout"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardElevation="4dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardUseCompatPadding="true">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <TextView
                 android:id="@+id/loan_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorPrimaryTextDefaultMaterialLight"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:paddingTop="24dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
                 tools:text="College loan" />
+
+            <TextView
+                android:id="@+id/loan_subtitle_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorSecondaryTextDefaultMaterialLight"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/loan_name_tv"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Tap for details" />
 
             <TextView
                 android:id="@+id/loan_initial_debt_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/initial_debt"
-                app:layout_constraintEnd_toStartOf="@+id/loan_initial_debt_tv"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryTextDefaultMaterialLight"
+                android:layout_below="@id/loan_subtitle_tv"
+                android:layout_alignParentStart="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="14sp"
+                android:text="@string/initial_debt" />
 
             <TextView
                 android:id="@+id/loan_initial_debt_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/loan_pay_action_btn"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBaseline="@id/loan_initial_debt_label"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="14sp"
+                android:textColor="@android:color/holo_green_dark"
                 tools:text="30,000€" />
 
             <TextView
                 android:id="@+id/loan_left_to_pay_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/total_to_pay"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/loan_left_to_pay_tv"
-                app:layout_constraintTop_toBottomOf="@+id/loan_initial_debt_label" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryTextDefaultMaterialLight"
+                android:layout_below="@id/loan_initial_debt_label"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="14sp"
+                android:text="@string/total_to_pay" />
 
             <TextView
                 android:id="@+id/loan_left_to_pay_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/loan_pay_action_btn"
-                app:layout_constraintTop_toBottomOf="@+id/loan_initial_debt_tv"
+                android:layout_alignBaseline="@id/loan_left_to_pay_label"
+                android:layout_alignParentEnd="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="14sp"
+                android:textColor="@android:color/holo_orange_dark"
                 tools:text="11,000€" />
 
             <Button
                 android:id="@+id/loan_pay_action_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_below="@id/loan_left_to_pay_label"
+                android:layout_alignParentStart="true"
+                android:gravity="start|center_vertical"
+                android:padding="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 android:text="@string/pay" />
-        </android.support.constraint.ConstraintLayout>
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
